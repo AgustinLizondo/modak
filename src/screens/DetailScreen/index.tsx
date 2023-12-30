@@ -8,6 +8,7 @@ import {faHeart} from '@fortawesome/free-solid-svg-icons';
 import artworkSlice from '../../stores/slices/artworkSlice';
 import {useAppDispatch, useAppSelector} from '../../stores/hooks';
 import styles from './styles';
+import PushNotification from 'react-native-push-notification';
 
 const DetailScreen = ({
   navigation,
@@ -22,8 +23,17 @@ const DetailScreen = ({
   const iconColor = isInFavorite ? 'red' : 'black';
   const dispatch = useAppDispatch();
   const onBackPress = () => navigation.goBack();
-  const onAddToFavoritePress = () => {
-    dispatch(artworkSlice.addToFavorite(artwork));
+  const onAddToFavoritesPress = () => {
+    if (!isInFavorite) {
+      PushNotification.localNotification({
+        title: 'Artwork added to favorites',
+        channelId: '1',
+        message: `Your artwork ${artwork.title} has been added to favorites`,
+      });
+      dispatch(artworkSlice.addToFavorite(artwork));
+    } else {
+      dispatch(artworkSlice.removeFromFavorite(artwork.id));
+    }
   };
 
   return (
@@ -32,7 +42,7 @@ const DetailScreen = ({
       <View style={styles.imageView}>
         <Pressable
           style={[styles.imageViewButton, styles.addToFavoriteButtonView]}
-          onPress={onAddToFavoritePress}>
+          onPress={onAddToFavoritesPress}>
           <FontAwesomeIcon icon={faHeart} size={24} color={iconColor} />
         </Pressable>
         <Image src={imageSource} style={styles.image} />

@@ -48,7 +48,9 @@ const ArtwokItem = (props: ArtworkItemProps) => {
       </View>
       <View style={styles.bottomView}>
         <Pressable style={styles.buttonView} onPress={onAddToFavoritesPress}>
-          <Text style={styles.buttonText}>{buttonText}</Text>
+          <Text numberOfLines={1} style={styles.buttonText}>
+            {buttonText}
+          </Text>
         </Pressable>
         <FontAwesomeIcon icon={faHeart} size={24} color={iconColor} />
       </View>

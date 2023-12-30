@@ -1,17 +1,26 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 
+const shadowColor = 'rgba(134, 134, 134, 0.3)';
 const styles = StyleSheet.create({
   mainView: {
     flex: 1,
     borderRadius: 12,
-    shadowColor: 'gray',
-    shadowOpacity: 0.2,
-    shadowRadius: 12,
+    shadowOpacity: 1,
+    shadowOffset: {width: 1, height: 1},
+    ...Platform.select({
+      ios: {
+        shadowColor,
+      },
+      android: {
+        elevation: 2,
+      },
+    }),
     backgroundColor: 'white',
     paddingBottom: 12,
     marginLeft: 6,
     marginRight: 6,
-    marginTop: 12,
+    marginTop: 6,
+    marginBottom: 6,
   },
   image: {
     borderTopLeftRadius: 12,
@@ -24,6 +33,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
   },
   bottomView: {
+    maxWidth: '90%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

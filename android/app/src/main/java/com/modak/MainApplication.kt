@@ -1,4 +1,4 @@
-package com.modak
+package com.agustinlizondo.modak
 
 import android.app.Application
 import com.facebook.react.PackageList

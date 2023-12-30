@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "520872295941",
+    "project_id": "modak-a5074",
+    "storage_bucket": "modak-a5074.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520872295941:android:994fba29e4e0cc45a9e66c",
+        "android_client_info": {
+          "package_name": "com.agustinlizondo.modak"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvXbVgXWPCnO7cILLcB1Kc7G2qVlElD0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.modak
+package com.agustinlizondo.modak
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   headerTitle: {
+    color: 'black',
     fontSize: 32,
     fontWeight: 'bold',
   },

@@ -11,7 +11,13 @@ const FavoritesScreen = ({navigation}: FavoritesScreenProps) => {
   const {favoriteArtworks} = useAppSelector(state => state.artwork);
   const onBackPress = () => navigation.goBack();
 
-  const renderItem = ({item}: any) => <ArtwokItem artwork={item} />;
+  const renderItem = ({item}: any) => {
+    const onArtworkItemPress = () => {
+      navigation.navigate('Detail', {artwork: item});
+    };
+    return <ArtwokItem artwork={item} onPress={onArtworkItemPress} />;
+  };
+
   const renderEmptyComponent = () => (
     <View style={styles.emptyView}>
       <Text style={styles.emptyText}>
