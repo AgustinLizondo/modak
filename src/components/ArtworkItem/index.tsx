@@ -6,6 +6,7 @@ import {ArtworkItemProps} from './types';
 import {useAppDispatch, useAppSelector} from '../../stores/hooks';
 import styles from './styles';
 import artworkSlice from '../../stores/slices/artworkSlice';
+import PushNotification from 'react-native-push-notification';
 
 const ArtwokItem = (props: ArtworkItemProps) => {
   const {artwork, ...rest} = props;
@@ -17,6 +18,11 @@ const ArtwokItem = (props: ArtworkItemProps) => {
 
   const onAddToFavoritesPress = () => {
     if (!isInFavorite) {
+      PushNotification.localNotification({
+        title: 'Artwork added to favorites',
+        channelId: '1',
+        message: `Your artwork ${artwork.title} has been added to favorites`,
+      });
       dispatch(artworkSlice.addToFavorite(artwork));
     } else {
       dispatch(artworkSlice.removeFromFavorite(artwork.id));
