@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
   },
   bottomView: {
-    maxWidth: '90%',
+    maxWidth: '80%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
   },
   emptyView: {
     flex: 1,
-    maxWidth: '60%',
     paddingHorizontal: 50,
     paddingVertical: 10,
   },
