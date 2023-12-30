@@ -41,7 +41,7 @@ const HomeScreen = ({navigation}: HomeScreenProps) => {
     <ScreenContainer>
       <Header title="Browse" onFavoritePress={onFavoritePress} />
       <FlatList
-        horizontal
+        numColumns={2}
         data={artworks}
         renderItem={renderItem}
         ListEmptyComponent={renderEmptyComponent}

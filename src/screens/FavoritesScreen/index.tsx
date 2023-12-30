@@ -25,9 +25,9 @@ const FavoritesScreen = ({navigation}: FavoritesScreenProps) => {
     <ScreenContainer>
       <Header title="Favorites" onBackPress={onBackPress} />
       <FlatList
+        numColumns={2}
         data={favoriteArtworks}
         renderItem={renderItem}
-        horizontal
         ListEmptyComponent={renderEmptyComponent}
       />
     </ScreenContainer>

@@ -2,16 +2,16 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   mainView: {
-    marginLeft: 16,
-    maxWidth: 320,
-    maxHeight: 520,
+    flex: 1,
     borderRadius: 12,
     shadowColor: 'gray',
     shadowOpacity: 0.2,
     shadowRadius: 12,
     backgroundColor: 'white',
-    marginTop: 12,
     paddingBottom: 12,
+    marginLeft: 6,
+    marginRight: 6,
+    marginTop: 12,
   },
   image: {
     borderTopLeftRadius: 12,
